@@ -4,11 +4,19 @@
 package com.thoughtworks.com.demo;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public String handleStringWithSb() {
+        StringBuilder builder = new StringBuilder(1024);
+        builder.append("handle ")
+                .append("string ")
+                .append("with ")
+                .append("string ")
+                .append("builder")
+                .insert(0, "hi, ");
+
+        return builder.toString();
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        System.out.println(new App().handleStringWithSb());
     }
 }
