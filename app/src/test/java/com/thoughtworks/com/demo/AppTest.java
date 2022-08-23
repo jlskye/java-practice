@@ -11,4 +11,10 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.handleStringWithSb(), "app should handle String With string builder");
     }
+
+    @Test
+    void should_get_handle_list_message() {
+        App app = new App();
+        assertEquals("handle my list", app.handleList());
+    }
 }

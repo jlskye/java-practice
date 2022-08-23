@@ -3,6 +3,8 @@
  */
 package com.thoughtworks.com.demo;
 
+import java.util.List;
+
 public class App {
     public String handleStringWithSb() {
         StringBuilder builder = new StringBuilder(1024);
@@ -16,7 +18,18 @@ public class App {
         return builder.toString();
     }
 
+    public String handleList() {
+        List<String> list = List.of("handle", "my", "list");
+        StringBuilder builder = new StringBuilder(1024);
+
+        for(String s : list) {
+            builder.append(s).append(" ");
+        }
+        return builder.toString().trim();
+    }
+
     public static void main(String[] args) {
+        System.out.println(new App().handleList());
         System.out.println(new App().handleStringWithSb());
     }
 }
