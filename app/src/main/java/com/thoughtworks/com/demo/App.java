@@ -4,6 +4,7 @@
 package com.thoughtworks.com.demo;
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -49,5 +50,9 @@ public class App {
 
     public ArrayList<String> getIntersectionCollection(ArrayList<String> first, ArrayList<String> last) {
         return new ArrayList<>(CollectionUtils.intersection(first, last));
+    }
+
+    public int getDuplicateSubstringCount(String message, String substring) {
+        return StringUtils.countMatches(message, substring);
     }
 }

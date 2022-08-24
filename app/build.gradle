@@ -25,6 +25,9 @@ dependencies {
 
     // https://mavenlibs.com/maven/dependency/org.apache.commons/commons-collections4
     implementation 'org.apache.commons:commons-collections4:4.4'
+
+    // https://mavenlibs.com/maven/dependency/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
 }
 
 application {

@@ -52,4 +52,10 @@ class AppTest {
         App app = new App();
         assertEquals(intersection, app.getIntersectionCollection(fruit, vegetable));
     }
+
+    @Test
+    void should_get_duplicate_substring_count_with_lang3() {
+        App app = new App();
+        assertEquals(3, app.getDuplicateSubstringCount("i think that that fruit in that plate taste good", "that"));
+    }
 }
