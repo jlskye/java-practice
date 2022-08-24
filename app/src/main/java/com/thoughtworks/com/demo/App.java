@@ -31,7 +31,7 @@ public class App {
     }
 
     public int handleRemoveListItem() {
-        List<Integer> list = new ArrayList<>(List.of(20,30,40,50));
+        ArrayList<Integer> list = new ArrayList<>(List.of(20,30,40,50));
         list.remove(1);
         return list.size();
     }
