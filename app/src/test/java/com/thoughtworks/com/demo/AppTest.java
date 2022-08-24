@@ -4,6 +4,10 @@
 package com.thoughtworks.com.demo;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -28,5 +32,24 @@ class AppTest {
     void should_get_first_item_in_linked_list() {
         App app = new App();
         assertEquals("apple", app.getFirstListItem());
+    }
+
+    @Test
+    void should_get_union_collection_successfully() {
+        ArrayList<String> fruit = new ArrayList<>(List.of("apple", "grape", "peach"));
+        ArrayList<String> vegetable = new ArrayList<>(List.of("tomato", "bean"));
+
+        App app = new App();
+        assertEquals(5, app.getUnionCollection(fruit, vegetable).size());
+    }
+
+    @Test
+    void should_get_intersection_collection_successfully() {
+        ArrayList<String> fruit = new ArrayList<>(List.of("apple", "grape", "peach"));
+        ArrayList<String> vegetable = new ArrayList<>(List.of("apple", "tomato", "bean"));
+        ArrayList<String> intersection = new ArrayList<>(List.of("apple"));
+
+        App app = new App();
+        assertEquals(intersection, app.getIntersectionCollection(fruit, vegetable));
     }
 }

@@ -3,6 +3,8 @@
  */
 package com.thoughtworks.com.demo;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,5 +41,13 @@ public class App {
     public String getFirstListItem() {
         LinkedList<String> linkedList = new LinkedList<>(List.of("apple", "orange", "grape"));
         return linkedList.getFirst();
+    }
+
+    public ArrayList<String> getUnionCollection(ArrayList<String> first, ArrayList<String> last) {
+        return new ArrayList<>(CollectionUtils.union(first, last));
+    }
+
+    public ArrayList<String> getIntersectionCollection(ArrayList<String> first, ArrayList<String> last) {
+        return new ArrayList<>(CollectionUtils.intersection(first, last));
     }
 }
