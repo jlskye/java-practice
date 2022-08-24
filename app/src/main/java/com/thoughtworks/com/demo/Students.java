@@ -14,9 +14,9 @@ public class Students {
     }
 
     public int findStudentScoreInList(String name) {
-        for(Student s: this.list) {
-            if (s.name.equals(name)) {
-                return s.score;
+        for(Student student: this.list) {
+            if (student.name.equals(name)) {
+                return student.score;
             }
         }
         return -1;
