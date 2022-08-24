@@ -20,12 +20,7 @@ public class App {
 
     public String handleList() {
         List<String> list = List.of("handle", "my", "list");
-        StringBuilder builder = new StringBuilder(1024);
-
-        for(String s : list) {
-            builder.append(s).append(" ");
-        }
-        return builder.toString().trim();
+        return String.join(" ", list);
     }
 
     public static void main(String[] args) {
