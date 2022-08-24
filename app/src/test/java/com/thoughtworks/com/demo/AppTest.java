@@ -17,4 +17,10 @@ class AppTest {
         App app = new App();
         assertEquals("handle my list", app.handleList());
     }
+
+    @Test
+    void should_get_correct_list_length_after_remove_operation() {
+        App app = new App();
+        assertEquals(3, app.handleRemoveListItem());
+    }
 }

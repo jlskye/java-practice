@@ -3,6 +3,7 @@
  */
 package com.thoughtworks.com.demo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class App {
@@ -26,5 +27,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().handleList());
         System.out.println(new App().handleStringWithSb());
+    }
+
+    public int handleRemoveListItem() {
+        List<Integer> list = new ArrayList<>(List.of(20,30,40,50));
+        list.remove(1);
+        return list.size();
     }
 }
