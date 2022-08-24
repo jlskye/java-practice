@@ -23,4 +23,10 @@ class AppTest {
         App app = new App();
         assertEquals(3, app.handleRemoveListItem());
     }
+
+    @Test
+    void should_get_first_item_in_linked_list() {
+        App app = new App();
+        assertEquals("apple", app.getFirstListItem());
+    }
 }

@@ -4,6 +4,7 @@
 package com.thoughtworks.com.demo;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class App {
@@ -33,5 +34,10 @@ public class App {
         List<Integer> list = new ArrayList<>(List.of(20,30,40,50));
         list.remove(1);
         return list.size();
+    }
+
+    public String getFirstListItem() {
+        LinkedList<String> linkedList = new LinkedList<>(List.of("apple", "orange", "grape"));
+        return linkedList.getFirst();
     }
 }
