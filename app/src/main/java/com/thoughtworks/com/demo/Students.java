@@ -21,4 +21,13 @@ public class Students {
         }
         return -1;
     }
+
+    public int getScore(String name) {
+        Integer score = this.cache.get(name);
+        if(score == null) {
+            score = this.findStudentScoreInList(name);
+            this.cache.put(name, score);
+        }
+        return score;
+    }
 }

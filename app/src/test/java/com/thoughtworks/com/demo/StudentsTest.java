@@ -25,4 +25,19 @@ class StudentsTest {
         Students students = new Students(new ArrayList<Student>(List.of(firstStu, secondStu)));
         assertEquals(-1, students.findStudentScoreInList("stu3"));
     }
+
+    @Test
+    void should_get_student_score_successfully() {
+        Student firstStu = new Student("stu1", 80);
+        Student secondStu = new Student("stu2", 90);
+        Students students = new Students(new ArrayList<Student>(List.of(firstStu, secondStu)));
+        assertEquals(80, students.getScore("stu1"));
+    }
+    @Test
+    void should_return_minus_one_when_student_not_exist() {
+        Student firstStu = new Student("stu1", 80);
+        Student secondStu = new Student("stu2", 90);
+        Students students = new Students(new ArrayList<Student>(List.of(firstStu, secondStu)));
+        assertEquals(-1, students.getScore("stu3"));
+    }
 }
