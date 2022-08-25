@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Students {
-    List<Student> list;
-    Map<String, Integer> cache;
+    private List<Student> list;
+    private Map<String, Integer> cache;
 
     public Students(List<Student> list) {
         this.list = list;
@@ -15,8 +15,8 @@ public class Students {
 
     public int findStudentScoreInList(String name) {
         for(Student student: this.list) {
-            if (student.name.equals(name)) {
-                return student.score;
+            if (student.getName().equals(name)) {
+                return student.getScore();
             }
         }
         return -1;

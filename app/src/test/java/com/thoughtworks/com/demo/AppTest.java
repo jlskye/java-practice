@@ -8,39 +8,39 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 class AppTest {
     @Test void appHandleStringWithSb() {
         App classUnderTest = new App();
-        assertNotNull(classUnderTest.handleStringWithSb(), "app should handle String With string builder");
+        assertThat(classUnderTest.handleStringWithSb()).isNotNull();
     }
 
     @Test
     void should_get_handle_list_message() {
         App app = new App();
-        assertEquals("handle my list", app.handleList());
+        assertThat(app.handleList()).isEqualTo("handle my list");
     }
 
     @Test
     void should_get_correct_list_length_after_remove_operation() {
         App app = new App();
-        assertEquals(3, app.handleRemoveListItem());
+        assertThat(app.handleRemoveListItem()).isEqualTo(3);
     }
 
     @Test
     void should_get_first_item_in_linked_list() {
         App app = new App();
-        assertEquals("apple", app.getFirstListItem());
+        assertThat(app.getFirstListItem()).isEqualTo("apple");
     }
 
     @Test
     void should_get_union_collection_successfully() {
         ArrayList<String> fruit = new ArrayList<>(List.of("apple", "grape", "peach"));
         ArrayList<String> vegetable = new ArrayList<>(List.of("tomato", "bean"));
-
         App app = new App();
-        assertEquals(5, app.getUnionCollection(fruit, vegetable).size());
+
+        assertThat(app.getUnionCollection(fruit, vegetable).size()).isEqualTo(5);
     }
 
     @Test
@@ -48,14 +48,14 @@ class AppTest {
         ArrayList<String> fruit = new ArrayList<>(List.of("apple", "grape", "peach"));
         ArrayList<String> vegetable = new ArrayList<>(List.of("apple", "tomato", "bean"));
         ArrayList<String> intersection = new ArrayList<>(List.of("apple"));
-
         App app = new App();
-        assertEquals(intersection, app.getIntersectionCollection(fruit, vegetable));
+
+        assertThat(app.getIntersectionCollection(fruit, vegetable)).isEqualTo(intersection);
     }
 
     @Test
     void should_get_duplicate_substring_count_with_lang3() {
         App app = new App();
-        assertEquals(3, app.getDuplicateSubstringCount("i think that that fruit in that plate taste good", "that"));
+        assertThat(app.getDuplicateSubstringCount("i think that that fruit in that plate taste good", "that")).isEqualTo(3);
     }
 }
