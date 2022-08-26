@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class OperatorTest {
     Operator operator;
@@ -46,5 +47,21 @@ class OperatorTest {
     @Test
     void should_validate_success_when_password_length_is_8() {
         assertThat(this.operator.validatePassword("yourSecret")).isEqualTo(true);
+    }
+
+    @Test
+    void should_throw_exception_when_argument_is_larger_than_20() {
+        long number = 20;
+        assertThatThrownBy(() -> {
+            this.operator.calculateBigNumber(number);
+        }).isInstanceOf(ArithmeticException.class);
+    }
+
+    @Test
+    void should_throw_exception_when_argument_is_less_than_0() {
+        long number = -1;
+        assertThatThrownBy(() -> {
+            this.operator.calculateBigNumber(number);
+        }).isInstanceOf(IllegalArgumentException.class);
     }
 }
