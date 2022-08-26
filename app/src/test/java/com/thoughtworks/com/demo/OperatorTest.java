@@ -24,8 +24,8 @@ class OperatorTest {
 
     @Test
     void should_return_correct_result_when_use_uppercase_operation() {
-        ArrayList list = new ArrayList(List.of("sdd", "sdd2w"));
-        ArrayList list2 = new ArrayList(List.of("SDD", "SDD2W"));
+        var list = new ArrayList(List.of("sdd", "sdd2w"));
+        var list2 = new ArrayList(List.of("SDD", "SDD2W"));
         assertThat(this.operator.castListUpperCase(list)).isEqualTo(list2);
     }
 
