@@ -3,6 +3,8 @@ package com.thoughtworks.com.demo;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -63,5 +65,11 @@ class OperatorTest {
         assertThatThrownBy(() -> {
             this.operator.calculateBigNumber(number);
         }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/test-capitalize.csv")
+    void should_change_string_to_capitalize(String input, String output) {
+        assertThat(this.operator.capitalizeString(input)).isEqualTo(output);
     }
 }
