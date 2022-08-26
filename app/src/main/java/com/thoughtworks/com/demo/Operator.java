@@ -45,4 +45,8 @@ public class Operator {
     public String capitalizeString(String input) {
         return Character.toUpperCase(input.charAt(0)) + input.substring(1).toLowerCase();
     }
+
+    public int doubleNumber(int input) {
+        return input * 2;
+    }
 }

@@ -4,7 +4,9 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -71,5 +73,20 @@ class OperatorTest {
     @CsvFileSource(resources = "/test-capitalize.csv")
     void should_change_string_to_capitalize(String input, String output) {
         assertThat(this.operator.capitalizeString(input)).isEqualTo(output);
+    }
+
+    static List<Arguments> should_double_number_successfully() {
+        return List.of(
+                Arguments.of(1, 2),
+                Arguments.of(2, 4),
+                Arguments.of(3, 6),
+                Arguments.of(4, 8),
+                Arguments.of(5, 10)
+        );
+    }
+    @ParameterizedTest
+    @MethodSource
+    void should_double_number_successfully(int input, int output) {
+        assertThat(this.operator.doubleNumber(input)).isEqualTo(output);
     }
 }
