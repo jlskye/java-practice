@@ -32,4 +32,10 @@ class OperatorTest {
         assertThat(operator.transferStringToDate(time)).isEqualTo(new LocalDate[]{
                 date1, date2,date3,date4,date5});
     }
+
+    @Test
+    void should_validate_success_when_password_length_is_8() {
+        Operator operator = new Operator();
+        assertThat(operator.validatePassword("yourSecret")).isEqualTo(true);
+    }
 }
